@@ -255,7 +255,11 @@ fun DocumentDetailScreen(
                                     if (doc.fileType == FileType.IMAGE) {
                                         val bitmap = remember(v.redactedContent) {
                                             if (v.redactedContent.startsWith("/")) {
-                                                BitmapFactory.decodeFile(v.redactedContent)
+                                                val f = java.io.File(v.redactedContent)
+                                                val appFilesDir = context.filesDir.canonicalPath
+                                                if (f.canonicalPath.startsWith(appFilesDir)) {
+                                                    BitmapFactory.decodeFile(v.redactedContent)
+                                                } else null
                                             } else null
                                         }
                                         if (bitmap != null) {
@@ -474,6 +478,8 @@ private fun VersionRow(
 private fun shareContent(context: android.content.Context, content: String, subject: String) {
     if (content.startsWith("/")) {
         val file = java.io.File(content)
+        val appFilesDir = context.filesDir.canonicalPath
+        if (!file.canonicalPath.startsWith(appFilesDir)) return
         if (file.exists()) {
             val uri = androidx.core.content.FileProvider.getUriForFile(
                 context,
