@@ -46,7 +46,6 @@ object PipelineLog {
     fun llmResponse(step: String, response: String) {
         val truncated = if (response.length > 500) response.take(500) + "...[truncated]" else response
         log("$TAG.$step", "LLM response (${response.length} chars):\n$truncated")
-        Log.d("$TAG.$step", "Full LLM response:\n$response")
     }
 
     fun parseResult(step: String, detail: String) {
