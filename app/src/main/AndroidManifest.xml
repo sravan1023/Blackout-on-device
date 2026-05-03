@@ -9,6 +9,11 @@
 
     <!-- No INTERNET permission — zero-trust, fully offline -->
 
+    <!-- Restricts BENCHMARK broadcasts to apps signed with the same key -->
+    <permission
+        android:name="com.example.blackout.BENCHMARK"
+        android:protectionLevel="signature" />
+
     <uses-feature android:name="android.hardware.camera" android:required="false" />
 
     <application
@@ -45,7 +50,8 @@
 
         <receiver
             android:name=".benchmark.BenchmarkReceiver"
-            android:exported="true">
+            android:exported="true"
+            android:permission="com.example.blackout.BENCHMARK">
             <intent-filter>
                 <action android:name="com.example.blackout.BENCHMARK" />
             </intent-filter>
