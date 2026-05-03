@@ -1,0 +1,14 @@
+Place model files in this folder before pushing to device.
+
+Files needed:
+  gemma-4-E2B-it.litertlm                  (~2.4 GB)  CPU / GPU
+  gemma-4-E2B-it_qualcomm_sm8750.litertlm  (~2.8 GB)  Snapdragon 8 Elite NPU
+
+Download from:
+  https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm
+
+Push to device:
+  adb push gemma-4-E2B-it_qualcomm_sm8750.litertlm /sdcard/Android/data/com.example.blackout/files/gemma4_npu.litertlm
+  adb push gemma-4-E2B-it.litertlm /sdcard/Android/data/com.example.blackout/files/gemma4.litertlm
+
+Note: *.litertlm files are gitignored and must be downloaded separately.

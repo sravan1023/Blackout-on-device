@@ -1,0 +1,14 @@
+# Build outputs
+app/build
+build
+.gradle
+
+# Local config
+local.properties
+
+# Model files (too large for git)
+*.litertlm
+
+# OS junk
+.DS_Store
+Thumbs.db

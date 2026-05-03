@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Blackout</string>
+    <string name="tagline">On-device redaction. Zero leaks.</string>
+    <string name="zero_trust_badge">100% On-Device · Airplane Mode Safe</string>
+    <string name="redact_button">Redact</string>
+    <string name="scan_button">Scan Document</string>
+    <string name="copy_button">Copy Redacted Text</string>
+    <string name="redact_again">Redact Again</string>
+    <string name="model_missing_title">Model Not Found</string>
+    <string name="model_missing_body">Push the Gemma 4 model to the device before running:</string>
+</resources>
